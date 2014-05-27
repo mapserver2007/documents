@@ -1,30 +1,30 @@
 # Java基礎知識
 
 ## 参考サイト
-[開発者が知っておくべきJavaと仮想マシンの歴史 - ＠IT](http://www.atmarkit.co.jp/fjava/column/andoh/andoh42.html)  
-[Java - Wikipedia](http://ja.wikipedia.org/wiki/Java)  
-[OpenJDK - Wikipedia](http://ja.wikipedia.org/wiki/OpenJDK)  
-[コラム: HotSpotとJRockitって何が違うの？ ～ VisualVM vs MissionControl](https://www.acroquest.co.jp/webworkshop/JavaTroubleshooting/column_006Main.html)  
-[アプリケーション実行基盤としてのOpenJDKの評価 調査報告書](http://ossipedia.ipa.go.jp/nfs/pdf_pub/1007/208/671/671.pdf)  
-[Project HotRockit](http://www.slideshare.net/OracleMiddleJP/project-hotrockit)  
-[Java 8でPermGenのOutOfMemoryError問題は解決されるのか？](http://www.infoq.com/jp/news/2013/03/java-8-permgen-metaspace)  
-[Java: PermGen はヒープの外 - sardineの日記](http://d.hatena.ne.jp/sardine/20100716/p2)  
-[Javaのヒープ・メモリ管理の仕組みについて](http://promamo.com/?p=2828)  
-[Java8のHotSpotVMからPermanent領域が消えた理由とその影響 | ギークを目指して](http://equj65.net/tech/java8hotspot/)  
-[メモリ管理(コンピュータの基礎知識)](http://ufcpp.net/study/computer/MemoryManagement.html)  
-[Java入門](http://bluesky117.web.fc2.com/cases/java/cases100101.html)  
-[A.02. Java の文法の基礎 · mixi-inc/AndroidTraining Wiki](https://github.com/mixi-inc/AndroidTraining/wiki/A.02.-Java-%E3%81%AE%E6%96%87%E6%B3%95%E3%81%AE%E5%9F%BA%E7%A4%8E)  
-[Java：意外と教わる機会の少ないメモリ管理のお話(4) - omotenashi-mind](http://www.omotenashi-mind.com/index.php/Java%EF%BC%9A%E6%84%8F%E5%A4%96%E3%81%A8%E6%95%99%E3%82%8F%E3%82%8B%E6%A9%9F%E4%BC%9A%E3%81%AE%E5%B0%91%E3%81%AA%E3%81%84%E3%83%A1%E3%83%A2%E3%83%AA%E7%AE%A1%E7%90%86%E3%81%AE%E3%81%8A%E8%A9%B1(4))  
-[しがないSEのブログ: JavaVMのメモリ管理（Permanent領域編）](http://n-arabesque.blogspot.jp/2014/01/javavmpermanent.html)  
-[Javaクラスローダー - Wikipedia](http://ja.wikipedia.org/wiki/Java%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC)  
-[Java8のHotSpotVMからPermanent領域が消えた理由とその影響 | ギークを目指して](http://equj65.net/tech/java8hotspot/)
+* [開発者が知っておくべきJavaと仮想マシンの歴史 - ＠IT](http://www.atmarkit.co.jp/fjava/column/andoh/andoh42.html)  
+* [Java - Wikipedia](http://ja.wikipedia.org/wiki/Java)  
+* [OpenJDK - Wikipedia](http://ja.wikipedia.org/wiki/OpenJDK)  
+* [コラム: HotSpotとJRockitって何が違うの？ ～ VisualVM vs MissionControl](https://www.acroquest.co.jp/webworkshop/JavaTroubleshooting/column_006Main.html)  
+* [アプリケーション実行基盤としてのOpenJDKの評価 調査報告書](http://ossipedia.ipa.go.jp/nfs/pdf_pub/1007/208/671/671.pdf)  
+* [Project HotRockit](http://www.slideshare.net/OracleMiddleJP/project-hotrockit)  
+* [Java 8でPermGenのOutOfMemoryError問題は解決されるのか？](http://www.infoq.com/jp/news/2013/03/java-8-permgen-metaspace)  
+* [Java: PermGen はヒープの外 - sardineの日記](http://d.hatena.ne.jp/sardine/20100716/p2)  
+* [Javaのヒープ・メモリ管理の仕組みについて](http://promamo.com/?p=2828)  
+* [Java8のHotSpotVMからPermanent領域が消えた理由とその影響 | ギークを目指して](http://equj65.net/tech/java8hotspot/)  
+* [メモリ管理(コンピュータの基礎知識)](http://ufcpp.net/study/computer/MemoryManagement.html)  
+* [Java入門](http://bluesky117.web.fc2.com/cases/java/cases100101.html)  
+* [A.02. Java の文法の基礎 · mixi-inc/AndroidTraining Wiki](https://github.com/mixi-inc/AndroidTraining/wiki/A.02.-Java-%E3%81%AE%E6%96%87%E6%B3%95%E3%81%AE%E5%9F%BA%E7%A4%8E)  
+* [Java：意外と教わる機会の少ないメモリ管理のお話(4) - omotenashi-mind](http://www.omotenashi-mind.com/index.php/Java%EF%BC%9A%E6%84%8F%E5%A4%96%E3%81%A8%E6%95%99%E3%82%8F%E3%82%8B%E6%A9%9F%E4%BC%9A%E3%81%AE%E5%B0%91%E3%81%AA%E3%81%84%E3%83%A1%E3%83%A2%E3%83%AA%E7%AE%A1%E7%90%86%E3%81%AE%E3%81%8A%E8%A9%B1(4))  
+* [しがないSEのブログ: JavaVMのメモリ管理（Permanent領域編）](http://n-arabesque.blogspot.jp/2014/01/javavmpermanent.html)  
+* [Javaクラスローダー - Wikipedia](http://ja.wikipedia.org/wiki/Java%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC)  
+* [Java8のHotSpotVMからPermanent領域が消えた理由とその影響 | ギークを目指して](http://equj65.net/tech/java8hotspot/)
 
 ## Javaの歴史
 * 1995年5月: SunがJava発表
 * 1996年2月: JDK1.0
 * 1997年2月: JDK1.1
 * 1998年2月: J2SE1.2(JDK1.2)
-    * エディション名がJDKから`J2SE(Java 2 Platform Standard Edition)`に変更
+    * エディション名がJDKからJ2SE(Java 2 Platform Standard Edition)に変更
 * 1998年4月: JITコンパイラ
 * 1999年4月: HotSpot
 * 2000年5月: J2SE1.3(JDK1.3)
@@ -33,7 +33,7 @@
     * バージョンのナンバリング変更
 * 2006年11月: JavaSE,JavaMEをOSS化
 * 2006年12月: JavaSE6(JDK6)
-    * JavaSE6から`J2SE`という名称を`JavaSE`に変更
+    * JavaSE6から`J2SE`という名称をJavaSEに変更
     * バージョンのナンバリングを変更(.0を廃止)
 * 2011年7月: JavaSE7(JDK7(OpenJDK)), OracleがSun買収後の初リリース。
 * 2014年3月: JavaSE8(JDK8)
@@ -78,19 +78,21 @@
 
 ### メモリ領域
 * JVMのメモリ領域は以下の様な構成である
+<pre>
     JVM
-      L JVM固有領域
-        L New領域(ヒープ領域)
-          L Eden領域
-          L Survivor領域
-            L From領域
-            L To領域
-        L Old領域(ヒープ領域)
-          L Tenured領域
-        L Parmanent領域(スタック領域)
-      L OS固有領域
-        L Cヒープ領域
-        L スタック領域
+        - JVM固有領域
+            - New領域(ヒープ領域)
+                - Eden領域
+                - Survivor領域
+                    - From領域
+                    - To領域
+            - Old領域(ヒープ領域)
+                - Tenured領域
+            - Parmanent領域(スタック領域)
+        - OS固有領域
+            - Cヒープ領域
+            - スタック領域
+</pre>
 
 * New領域
     * new演算子によって作成されたオブジェクトが格納される領域
