@@ -18,7 +18,7 @@
 * [Rubyのスレッド周りの話 - Qiita](http://qiita.com/motsat/items/8c9b6bc56152444f50a0)
 * [Large Object Heap (LOH)](http://article.higlabo.com/ja/large_object_heap.html)
 
-## .NET Framworkにおけるコードの流れ
+## .NET Frameworkにおけるコードの流れ
 * 各種言語(C#/VB.NETなど)のソースコードを記述する
 * ソースコードはそれぞれの言語のコンパイラで共通中間言語(CIL:Common Intermediate Language)に変換される
     * CILは「IL」「MSIL(Microsoft IL)」とも呼ばれる
