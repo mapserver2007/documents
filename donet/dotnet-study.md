@@ -31,7 +31,7 @@
         * Mac/FreeBSD版のCLIも開発している
 * 共通中間言語(CIL)はCLI(CLR)によりネイティブコードに変換され、実行される
 
-## .NETフレームワークの歴史
+## .NET Frameworkの歴史
 * TODO
 * http://ja.wikipedia.org/wiki/.NET_Framework
 
