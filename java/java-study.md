@@ -17,7 +17,13 @@
 * [Java：意外と教わる機会の少ないメモリ管理のお話(4) - omotenashi-mind](http://www.omotenashi-mind.com/index.php/Java%EF%BC%9A%E6%84%8F%E5%A4%96%E3%81%A8%E6%95%99%E3%82%8F%E3%82%8B%E6%A9%9F%E4%BC%9A%E3%81%AE%E5%B0%91%E3%81%AA%E3%81%84%E3%83%A1%E3%83%A2%E3%83%AA%E7%AE%A1%E7%90%86%E3%81%AE%E3%81%8A%E8%A9%B1(4))  
 * [しがないSEのブログ: JavaVMのメモリ管理（Permanent領域編）](http://n-arabesque.blogspot.jp/2014/01/javavmpermanent.html)  
 * [Javaクラスローダー - Wikipedia](http://ja.wikipedia.org/wiki/Java%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC)  
-* [Java8のHotSpotVMからPermanent領域が消えた理由とその影響 | ギークを目指して](http://equj65.net/tech/java8hotspot/)
+* [Java8のHotSpotVMからPermanent領域が消えた理由とその影響 | ギークを目指して](http://equj65.net/tech/java8hotspot/)  
+* [Metaspace](http://www.slideshare.net/YaSuenag/metaspace)  
+* [第9回　［最終回］HotSpot JVMのGCを選択しよう：Javaはどのように動くのか～図解でわかるJVMの仕組み｜gihyo.jp … 技術評論社](http://gihyo.jp/dev/serial/01/jvm-arc/0009)  
+* [Java VMのガーベジコレクションの整理 - Qiita](http://qiita.com/sipadan2003/items/a7acf7f0375d818b5045)  
+* [Javaガベージコレクションのエッセンス](http://www.infoq.com/jp/articles/Java_Garbage_Collection_Distilled)  
+* [ガベージファースト・コレクタ](http://www.oracle.com/technetwork/jp/articles/java/garbage-first-collector-427543-ja.html)  
+* [徹底解剖「G1GC」実装編](http://www.narihiro.info/ebook/g1gc-impl-20120914.pdf)  
 
 ## Javaの歴史
 * 1995年5月: SunがJava発表
@@ -81,14 +87,14 @@
 <pre>
     JVM
         - JVM固有領域
-            - New領域(ヒープ領域)
+            - New領域
                 - Eden領域
                 - Survivor領域
                     - From領域
                     - To領域
-            - Old領域(ヒープ領域)
+            - Old領域
                 - Tenured領域
-            - Parmanent領域(スタック領域)
+            - Parmanent領域
         - OS固有領域
             - Cヒープ領域
             - スタック領域
@@ -136,6 +142,45 @@
     * オブジェクトの寿命が長くなり、Old領域へ追いやられる。そうなるとScavengeGCでは削除されなくなり、FullGCが発生しやすくなる
 * staticメソッドを多用しすぎないこと
     * Parmanent領域にロードされる情報が多くなるためFullGCが発生しやすくなる
+
+### JVMが使用するGC
+* 世代別GC
+    * JVMが採用している全体的なGC方式
+    * Old領域を開放するためにFullGCが必要になるが、アプリケーションスレッドが停止する(Stop the World)は避けられない
+        * アプリケーションスレッドを止めないと、オブジェクトの参照関係に不整合が生じる恐れがあるため
+        * 発生回数を減らす工夫はできる
+    * New領域(ヒープ)サイズを大きく取るほどOld領域に追いやられるオブジェクトの総量も増えるため、FullGCが発生した場合の時間が無視できないレベルになる
+
+* ScavengeGC
+    * New領域を対象としたGC方式
+    * 頻繁に実行され、高速
+    * マルチスレッドで実行可能(JVMオプションで指定)、並列で実行するGCを特にパラレルGCとも言う
+    * コピーGC、マイナーGCとも言う
+
+* FullGC
+    * Old領域(Tenured領域)とParmanent(Metaspace)領域を対象としたGC方式
+    * コンパクションも行われる
+    * アプリケーションスレッドが停止する
+
+* Concurrent Mark and Sweep GC(CMS)
+    * J2SE1.4(JDK1.4)より利用可能
+    * Tenured領域のみ対象
+    * アプリケーションスレッドとGCスレッドの協調処理を実行するためCPUリソースを使用する。このためアプリケーションのスループットは低下するものの停止はしない
+        * 実際には完全に停止しないわけではなく、initialフェーズ、remarkフェーズでは停止する([参照](http://gihyo.jp/dev/serial/01/jvm-arc/0009))
+    * CMSはコンパクションしないので断片化する
+    * CMSを実行してもTenured領域に空きができない場合FullGCが実行される
+
+* Gavage First GC(G1GC)
+    * JavaSE 7u4より利用可能
+    * TODO
+
+### GCとキャッシュ
+メモベースで。
+* 大規模システムではキャッシュを多用するが、キャッシュの破棄とGCが課題になる
+* JVMは世代別GCなので、長い間キャッシュされ続けるとOld領域に追いやられる(.NETなら世代2)
+* Old領域のオブジェクトを解放するにはFullGCが必要でStop the World(アプリケーションスレッドの停止)
+* 結局JVMのチューニングで頑張るしか無い
+
 
 ## 関連項目
 
