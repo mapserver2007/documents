@@ -24,6 +24,7 @@
 * [Javaガベージコレクションのエッセンス](http://www.infoq.com/jp/articles/Java_Garbage_Collection_Distilled)  
 * [ガベージファースト・コレクタ](http://www.oracle.com/technetwork/jp/articles/java/garbage-first-collector-427543-ja.html)  
 * [徹底解剖「G1GC」実装編](http://www.narihiro.info/ebook/g1gc-impl-20120914.pdf)  
+* [JVM的な何か@JVM Operation Casual Talk - SSSSLIDE](http://sssslide.com/www.slideshare.net/shot6/jvm-33248312)  
 
 ## Javaの歴史
 * 1995年5月: SunがJava発表
@@ -173,6 +174,8 @@
 * Gavage First GC(G1GC)
     * JavaSE 7u4より利用可能
     * TODO
+    * ヒープ領域がリージョンという単位に2048個分割されている
+    * New領域、Old領域という区分けがない
 
 ### GCとキャッシュ
 メモベースで。

@@ -8,8 +8,8 @@
 * [C# ガベージコレクション](http://uchukamen.com/Programming/GC/#.NET_Framework_のメモリ管理の内部動作)
 * [Microsoft .NET Framework の自動メモリ管理 Part Ⅰ](http://msdn.microsoft.com/ja-jp/library/bb985010.aspx)
 * [Microsoft .NET Framework の自動メモリ管理 Part Ⅱ](http://msdn.microsoft.com/ja-jp/library/dd297765.aspx)
-* [自動メモリ管理](http://msdn.microsoft.com/ja-jp/library/f144e03t(v=vs.110\).aspx)
-* [ガベージ コレクションの基礎](http://msdn.microsoft.com/ja-jp/library/ee787088(v=vs.110\).aspx)
+* [自動メモリ管理](http://msdn.microsoft.com/ja-jp/library/f144e03t(v=vs.110).aspx)
+* [ガベージ コレクションの基礎](http://msdn.microsoft.com/ja-jp/library/ee787088(v=vs.110).aspx)
 * [マネージリソースとアンマネージリソースの定義 - 憂国のプログラマ Hatena版](http://d.hatena.ne.jp/hilapon/20100904/1283570083)
 * [3つの視点でネイティブと.NETの適材適所を考察 － ＠I](http://www.atmarkit.co.jp/fdotnet/chushin/greatblogentry_11/greatblogentry_11_01.html)
 * [.NETアプリを軽快にするためのガベージ・コレクション講座 － ＠IT](http://www.atmarkit.co.jp/fdotnet/directxworld/directxworld06/directxworld06_01.html)
@@ -32,8 +32,106 @@
 * 共通中間言語(CIL)はCLI(CLR)によりネイティブコードに変換され、実行される
 
 ## .NET Frameworkの歴史
-* TODO
-* http://ja.wikipedia.org/wiki/.NET_Framework
+* .NET Framework 1.0(2000年9月～2004年8月)
+    * Windows98、NT4.0、2000、XP向け
+* .NET Framework 1.1(2003年4月～2009年10月)
+    * ASP.NETのモバイル向け機能追加
+    * セキュリティ仕様の変更
+    * ODBC、Oracle接続を標準対応
+    * IPv6対応
+    * API変更
+* .NET Framework 2.0(2007年1月～2010年11月)
+    * VisualStudio 2005以降で開発可能
+    * データバインディングの新しいAPI追加
+    * ASP.NETのウェブコントロールを追加
+    * ネイティブアプリケーションへの新しいホスティングAPI追加
+    * CLRのジェネリック対応
+    * 64ビットシステムへの対応
+    * .NET Micro Framework追加
+    * API変更
+* .NET Framwork 3.0(2006年11月～2010年11月)
+    * Windows Vista、Windows Server 2008に標準搭載、Windows XP以降で動作
+    * Windows Presentation Foundation(WPF)追加
+        * UIとロジックを分離したプログラミングモデルを提供する
+        * デスクトップアプリ開発用(Webも一応できる)
+    * Windows Communication Foundation(WCF)追加
+    * Windows Workflow Foundation(WF)追加
+    * Windows CardSpace(WCS)追加
+    * クラスライブラリ、CLRは2.0と変更なし(CLR2)
+* .NET Framework 3.5(2008年8月～2010年11月)
+    * ASP.NET AJAXの対応
+    * LINQ追加
+    * C#、VB.NETのコンパイラ変更、J#対応終了
+    * CLRは2のまま変更なし
+* .NET Framework 4.0(2010年4月～)[[参考](http://www.microsoft.com/ja-jp/net/netfx4/5min.aspx)]
+    * CLRのバージョンが4に更新(CLR4)
+    * F#対応
+    * DLR(動的言語ランタイム)追加
+        * 動的型付け(コンパイル時に型情報が未確定なメンバ)が可能(C# 4.0のdynamicキーワード)
+        * DLR上に実装された言語(IronRuby、IronPython)との連携も可能
+    * MEF(Managed Extensibility Framwork)対応
+        * プラグイン、アドインの仕組みを.NET上で簡単に実現するためのフレームワーク
+        * Visual Studio 2010のアドインはMEFを使っている
+    * Parallel Extensions(並列プログラミング)
+        * TPL(Task Parallel Library:タスク並列処理ライブラリ)
+            * System.Threading.Parallelクラス等で繰り返し処理を並列化
+        * Parallel LINQ(PLINQ)
+            * LINQの並列実行
+    * Velocity(分散キャッシュAPI)
+        * memcachedに似た技術
+* .NET Framework 4.5(2012年8月～)
+    * CLR4.5
+        * CLR4との共存はできない
+        * .NET4と.NET4.5は(ほぼ)完全な互換性がある
+        * Windows Vista以降が必要(XP非対応)
+    * 非同期プログラミング
+    * Windows Metroアプリケーションの開発対応
+
+## .NET Framworkの構成
+* CLR(Common Language Runtime)
+    * JITコンパイラ、GC、メモリ管理、クラスローダ、セキュリティ
+* クラスライブラリ
+    * System.* の名前空間で提供されるクラス群
+* 中間言語(IL=Intermediate Language)
+    * ソースコードと機械語の中間にあたる言語。Javaではバイトコードと呼ぶ。JITコンパイラはILを読み、ネイティブコード(機械語)に翻訳して実行する
+    * コンパイルすると、exeが生成されるが、IL生成も標準でできる(が、IL生成は黒魔術)
+* ASP.NET
+    * Webアプリケーションのためのフレームワーク
+* Silverlight
+    * マルチプラットフォームなRIA。MacOS Xにも対応している
+* 分散コンピューティング
+    * WCF(Windows Communication Foundation)(=.NET3.0以降)
+        * クラスをサービスとして実装する(ServiceContractアノテーションを付与したり)
+    * WS-*(Webサービス拡張仕様)
+        * メッセージング(WS-Addressing)
+        * セキュリティ(WS-Security/WS-SecureConversation/WS-SecurityPolicy/WS-Trust)
+        * 高信頼性(WS-ReliableMessaging)
+        * トランザクション(WS-Coordination/WS-AtomicTransaction)
+        * メタデータ(WS-Policy/WS-PolicyAttachement/WS-MetadataExchange)
+    * 基本的なWSDL、SOAPと言ったもの以外の拡張されたWebサービス仕様群だが、仕様が膨大
+
+
+## .NET Framework 4.0の構成
+<pre>
+.NET Framework 4.0
+    - ASP.NET
+        - Web Forms
+            - Dynamic Data
+            - ASP.NET AJAX
+        - ASP.NET MVC
+    - WPF
+    - WCF
+    - WF
+    - ADO.NET
+        - DataSet
+        - LINQ
+        - Entity Framework
+    - BCL
+    - CLR
+</pre>
+
+## CLR
+TODO?
 
 ## メモリ管理
 
