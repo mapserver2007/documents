@@ -33,3 +33,16 @@ using整理、削除および並び替え    |Ctrl+Shift+O
     * VSCommandsで使えなくなった機能を使える
 * [Local History for Visual Studio](https://localhistory.codeplex.com/)
     * SublimeTextではおなじみのLocalHistoryが使える
+* [C# outline 2015](https://visualstudiogallery.msdn.microsoft.com/9390e08c-d0aa-42f1-b3d2-5134aabf3b9a)
+    * ifやforといった構文で開閉可能
+* [Configuration Transform](https://visualstudiogallery.msdn.microsoft.com/579d3a78-3bdd-497c-bc21-aa6e6abbc859)
+    * App.configのDebub/Release切り替えが楽にできる。2015非対応
+
+## 4.xUnit.NET
+インストール手順は以下の通り。
+1. テストプロジェクトを作成(クラスライブラリとして作成)
+2. Nugetで`xUnit.NET`をインストール
+3. 拡張と更新プログラムから`xUnit.net Test Extensions`、`xUnit Test Project Template`をインストール
+4. パッケージマネージャコンソールで`xunit.runner.visualstudio`をインストール
+
+テストを書いたら、[テスト]->[ウィンドウ]->[テストエクスプローラー]を表示し、テストを実行する。
