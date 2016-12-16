@@ -27,12 +27,10 @@
 	* Git
 * [Java(JDK)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
     * jdk8-downloads-2133151
-* [PHP]
-  
 * [ConEmu](https://conemu.github.io/)
 	* [詳細設定](https://github.com/mapserver2007/documents/blob/master/powershell/settings.md)
 * Visual Studio
-
+	* Professionalを入れる
 
 ## 以下未設定
 
