@@ -25,6 +25,8 @@
 	* 説明不要なエディタ2
 * [Atom](https://atom.io/)
 	* メインエディタ。詳細設定は[こちら](https://github.com/mapserver2007/my-editor-settings/tree/master/atom)
+* [IntellJ IDEA](https://www.jetbrains.com/idea/)
+	* Java/Groovy開発用
 
 ## 開発系
 * [Git for Windows](https://git-for-windows.github.io/)
