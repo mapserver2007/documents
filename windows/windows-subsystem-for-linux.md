@@ -1,4 +1,4 @@
-# Windows Subsystem for Linux
+# Vagrant on Windows Subsystem for Linuxで開発環境構築
 
 ## インストール・有効化
 * Windows 10 Anniversary Update (2017/10)のアップデートでインストール済み
