@@ -49,12 +49,12 @@ MSゴシックやMS明朝は汚いので見栄えのいい日本語等幅フォ�
 | キーバインド     | Keys&Macro                               | Create new console or new window：Ctrl+T<br>Switch next console：Ctrl+Shift+←<br>Switch previous console：Ctrl+Shift+→<br>Close current tab：Ctrl+Shift+Delete |
 
 ### PowerShell設定
-`C:\Users\(ユーザ名)\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`を編集する。
+`echo $profile`でファイルパスがわかるので編集する。
 
 ```bash
 function prompt {
-	Import-Module posh-git
-	Import-Module PSReadLine
+    Import-Module posh-git
+    Import-Module PSReadLine
 
     $idx = $pwd.ProviderPath.LastIndexof("\") + 1
     $cdn = $pwd.ProviderPath.Remove(0, $idx)
@@ -67,16 +67,20 @@ function prompt {
 }
 
 function CmdWorkspaceHome {
-	cd C:\workspace
+    cd ${env:homedrive}${env:homepath}\Dropbox\workspace
+}
+
+function CmdRunBash {
+    Invoke-Expression "${env:windir}\system32\bash.exe -cur_console:p"
 }
 
 function CmdShow {
-	Invoke-Item .
+    Invoke-Item .
 }
 
 Set-Alias -name ll -value ls
 Set-Alias -name which -value Get-Command
 Set-Alias -name tt -value CmdWorkspaceHome
-Set-Alias -name vi -value "C:\Program Files (x86)\sakura\sakura.exe"
 Set-Alias -name show -value CmdShow
+Set-Alias -name bash -value CmdRunBash
 ```
