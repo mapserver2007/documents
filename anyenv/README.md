@@ -31,6 +31,12 @@ $> anyenv install rbenv
 $> anyenv install phpenv
 ```
 
+## rbenv-updateインストール
+```bash
+$> git clone https://github.com/rkh/rbenv-update.git "$(rbenv root)/plugins/rbenv-update"
+$> rbenv update
+```
+
 ## Rubyインストール
 ```bash
 $> rbenv install 2.3.6
