@@ -1,0 +1,23 @@
+# common settings
+alias vi='vim'
+alias ll='ls -alh'
+alias tt='cd /Users/mapserver2007/Dropbox/workspace'
+alias updatedb='sudo /usr/libexec/locate.updatedb'
+
+# anyenv
+if [ -d $HOME/.anyenv ] ; then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init - --no-rehash)"
+fi
+
+# dir_colors
+if type -P dircolors >/dev/null ; then
+  eval `dircolors $HOME/.dir_colors`
+fi
+
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+source ~/.git-prompt.sh
+
+# added by travis gem
+[ -f /Users/mapserver2007/.travis/travis.sh ] && source /Users/mapserver2007/.travis/travis.sh
