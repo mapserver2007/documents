@@ -23,8 +23,9 @@ $> xcode-select --install
 ```sh
 $> brew update
 $> brew -v
-Homebrew 1.7.7
-Homebrew/homebrew-core (git revision ca5b3; last commit 2018-10-17)
+Homebrew 2.0.5
+Homebrew/homebrew-core (git revision 5cb6e; last commit 2019-03-19)
+Homebrew/homebrew-cask (git revision 751d; last commit 2019-03-19)
 ```
 
 ### Homebrew Cask
@@ -83,14 +84,20 @@ lts/boron -> v6.14.4 (-> N/A)
 lts/carbon -> v8.12.0 (-> N/A)
 ```
 
-### Java
-
+## インストールするbrewパッケージ
+* gibo
+  * gitignore自動生成
 
 ## インストールするアプリ
 
 ### 開発系
 * Visual Studio Code
 * Intellj IDEA
+* iTerm
+* MongoDB Compass
+* MySQL WorkBench
+* DBeaver
+* Sourcetree
 
 ### 一般系
 * CLCL
