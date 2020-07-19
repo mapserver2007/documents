@@ -23,9 +23,8 @@ $> xcode-select --install
 ```sh
 $> brew update
 $> brew -v
-Homebrew 2.0.5
-Homebrew/homebrew-core (git revision 5cb6e; last commit 2019-03-19)
-Homebrew/homebrew-cask (git revision 751d; last commit 2019-03-19)
+Homebrew 1.7.7
+Homebrew/homebrew-core (git revision ca5b3; last commit 2018-10-17)
 ```
 
 ### Homebrew Cask
@@ -84,20 +83,14 @@ lts/boron -> v6.14.4 (-> N/A)
 lts/carbon -> v8.12.0 (-> N/A)
 ```
 
-## インストールするbrewパッケージ
-* gibo
-  * gitignore自動生成
+### Java
+https://github.com/mapserver2007/documents/tree/master/anyenv#java%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
 
 ## インストールするアプリ
 
 ### 開発系
 * Visual Studio Code
 * Intellj IDEA
-* iTerm
-* MongoDB Compass
-* MySQL WorkBench
-* DBeaver
-* Sourcetree
 
 ### 一般系
 * CLCL
