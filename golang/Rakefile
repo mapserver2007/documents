@@ -1,0 +1,24 @@
+
+WORKSPACE = '$HOME/workspace_go'
+PROJECT = "#{WORKSPACE}/src/github.com/mapserver2007/golang-example-app"
+
+# https://github.com/golang-standards/project-layout
+desc "ディレクトリ構成初期化"
+task :init_dir do
+  cmd = <<-EOS
+    mkdir -p "#{PROJECT}/cmd"
+  EOS
+  sh cmd
+end
+
+desc "go mod"
+# このコマンドでgo.modが作成される
+task :gomod do
+  cmd = <<-EOS
+    pushd #{PROJECT}
+    go mod init
+    popd
+  EOS
+  sh cmd
+end
+

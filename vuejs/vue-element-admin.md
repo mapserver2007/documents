@@ -1,0 +1,9 @@
+# vue-element-admin
+* https://github.com/PanJiaChen/vue-element-admin
+* https://panjiachen.github.io/vue-element-admin-site/guide/
+* 中国製
+* かなりの機能が用意されてる
+* デザインもきれい
+* スニペットあり
+    * https://marketplace.visualstudio.com/items?itemName=liugq.vue-element-admin-snippet
+* ライセンスはMIT

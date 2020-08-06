@@ -60,7 +60,10 @@ https://qiita.com/terukizm/items/e2c1400d129042868731
     * デプロイグループ名: code-deploy-example-group
     * サービスロール: CodeDeployExampleRole
     * デプロイタイプ: Blue/Green
-    * 環境設定: Amazon EC2 Auto Scalling グループの自動コピー
+        * インプレースはすでに稼働しているEC2インスタンスにデプロイする
+        * Blue/Greenはデプロイ対象の EC2 インスタンスや AutoScaling グループを新規に用意して 古いインスタンスは破棄する
+    * 環境設定: インスタンスの手動プロビジョン
+        * Amazon EC2インスタンス
     * デプロイ設定:
         * すぐにトラフィックを再ルーティング
         * デプロイグループの置き換え元インスタンスを終了
@@ -69,4 +72,8 @@ https://qiita.com/terukizm/items/e2c1400d129042868731
             * CodeDeployDefault.AllAtOnce
                 * 1つでも失敗すると全部失敗
     * ロードバランサ
-        * 
+        * Application Load BalancerまたはNetwork Load Balancer
+
+## S3, Github連携
+* S3設定が必要なのは、Githubからcloneしてきたソースコードをビルドし結果を置いておくため
+* 
