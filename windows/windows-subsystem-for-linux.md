@@ -21,21 +21,12 @@ $> bash
 
 ### .bashrc
 ```
-# alias
 alias vi='vim'
 alias tt='cd /mnt/c/Users/tanak/Dropbox/workspace/'
-```
-### .bash_profile
-```
-if [ -f ~/.bashrc ]; then
-. ~/.bashrc
-fi
 
 VIRTUAL_BOX="/mnt/c/Program Files/Oracle/VirtualBox"
 VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH=/mnt/c/Users/tanak
 VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
-
-export PATH=$PATH:"${VIRTUAL_BOX}":VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH:VAGRANT_WSL_ENABLE_WINDOWS_ACCESS
 ```
 
 ## Vagrantインストール
